@@ -6,7 +6,7 @@ import Root from "./components/root/Root";
 import Register from "./components/register/Register";
 import Login from "./components/login/Login";
 import Home from "./components/Home/Home";
-import AuthProvider from "./AuthProvider";
+import AuthProvider from "./provider/AuthProvider";
 
 const router = createBrowserRouter([
   {
