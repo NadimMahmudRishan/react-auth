@@ -5,12 +5,18 @@ import "./index.css";
 import Root from "./components/root/Root";
 import Register from "./components/register/Register";
 import Login from "./components/login/Login";
+import Home from "./components/Home/Home";
+import AuthProvider from "./AuthProvider";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root></Root>,
     children: [
+      {
+        path: "/home",
+        element: <Home></Home>,
+      },
       {
         path: "/register",
         element: <Register></Register>,
@@ -24,6 +30,8 @@ const router = createBrowserRouter([
 ]);
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <RouterProvider router={router} />
+    <AuthProvider>
+      <RouterProvider router={router} />
+    </AuthProvider>
   </StrictMode>
 );
